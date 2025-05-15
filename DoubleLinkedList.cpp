@@ -70,7 +70,17 @@ public:
                     return;
                }
 
-              
-           }
+                //step 9: insert between current and current->next
+                newNode->next = current->next;
+                newNode->prev = current;
+ 
+                //insert last node
+                if (current->next != NULL)
+                    current->next->prev = newNode;
+ 
+                 current->next = newNode;
+            }
+ 
+            
     }
 };
